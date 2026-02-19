@@ -16,12 +16,12 @@ export function Header() {
       <div className="container flex h-14 max-w-screen-xl items-center justify-between px-4 mx-auto">
         <Link href="/" className="flex items-center space-x-2 group">
           <div className="relative">
-            <div className={`absolute inset-0 bg-gradient-to-r from-${siteConfig.headerGradient.from} to-${siteConfig.headerGradient.to} rounded-lg blur-sm opacity-75 group-hover:opacity-100 transition-opacity`} />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand to-brand-accent rounded-lg blur-sm opacity-75 group-hover:opacity-100 transition-opacity" />
             <div className="relative bg-background rounded-lg p-1.5">
-              <Wrench className={`h-5 w-5 text-${siteConfig.headerGradient.from}`} />
+              <Wrench className="h-5 w-5 text-brand" />
             </div>
           </div>
-          <span className={`font-bold text-lg bg-gradient-to-r from-${siteConfig.headerGradient.from} to-${siteConfig.headerGradient.to} bg-clip-text text-transparent`}>
+          <span className="font-bold text-lg bg-gradient-to-r from-brand to-brand-accent bg-clip-text text-transparent">
             {siteConfig.name}
           </span>
         </Link>

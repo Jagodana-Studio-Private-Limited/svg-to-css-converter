@@ -35,7 +35,7 @@ export default async function Image() {
             left: 0,
             right: 0,
             height: "6px",
-            background: `linear-gradient(to right, ${siteConfig.themeColor}, #06b6d4)`,
+            background: `linear-gradient(to right, ${siteConfig.themeColor}, ${siteConfig.brandAccentColor})`,
           }}
         />
 
@@ -54,7 +54,7 @@ export default async function Image() {
             style={{
               fontSize: 72,
               fontWeight: 800,
-              background: `linear-gradient(to right, ${siteConfig.themeColor}, #06b6d4)`,
+              background: `linear-gradient(to right, ${siteConfig.themeColor}, ${siteConfig.brandAccentColor})`,
               backgroundClip: "text",
               color: "transparent",
               lineHeight: 1.1,

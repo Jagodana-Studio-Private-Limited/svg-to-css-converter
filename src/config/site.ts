@@ -4,14 +4,13 @@ export const siteConfig = {
   title: "{{TOOL_TITLE}}",
   description: "{{TOOL_DESCRIPTION}}",
   url: "https://{{TOOL_SLUG}}.jagodana.com",
-  ogImage: "/og-image.png",
+  ogImage: "/opengraph-image",
 
   // Header
   headerIcon: "Wrench", // lucide-react icon name (e.g., Image, Map, Code, Palette, Globe, FileSearch)
-  headerGradient: {
-    from: "emerald-500",
-    to: "cyan-500",
-  },
+  // Brand gradient colors for Tailwind are in globals.css (--brand / --brand-accent)
+  // Use text-brand, from-brand, to-brand-accent etc. in components
+  brandAccentColor: "#06b6d4", // hex accent for OG image gradient (must match --brand-accent in globals.css)
 
   // SEO
   keywords: [

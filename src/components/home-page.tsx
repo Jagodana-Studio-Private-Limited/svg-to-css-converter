@@ -29,10 +29,10 @@ export function HomePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-${siteConfig.headerGradient.from}/10 border border-${siteConfig.headerGradient.from}/20 mb-6`}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand/10 border border-brand/20 mb-6"
           >
-            <Sparkles className={`h-4 w-4 text-${siteConfig.headerGradient.from}`} />
-            <span className={`text-sm text-${siteConfig.headerGradient.from} font-medium`}>
+            <Sparkles className="h-4 w-4 text-brand" />
+            <span className="text-sm text-brand font-medium">
               {siteConfig.hero.badge}
             </span>
           </motion.div>
@@ -68,7 +68,7 @@ export function HomePage() {
             <Button
               size="lg"
               onClick={scrollToTool}
-              className={`gap-2 bg-gradient-to-r from-${siteConfig.headerGradient.from} to-${siteConfig.headerGradient.to} text-white shadow-lg shadow-${siteConfig.headerGradient.from}/25 px-8 py-6 text-lg`}
+              className="gap-2 bg-gradient-to-r from-brand to-brand-accent text-white shadow-lg shadow-brand/25 px-8 py-6 text-lg"
             >
               Try Now
               <ArrowDown className="h-5 w-5" />

@@ -87,10 +87,10 @@ This is the SINGLE SOURCE OF TRUTH for all tool-specific content. Update every `
 - `description` - SEO description
 - `url` - Production URL (e.g., "https://favicon-generator.jagodana.com")
 - `headerIcon` - lucide-react icon name for the header
-- `headerGradient` - Tailwind color pair (from/to)
+- `brandAccentColor` - Hex accent color for OG image gradient (must match `--brand-accent` in globals.css)
 - `keywords` - SEO keywords array
 - `applicationCategory` - Schema.org category
-- `themeColor` - Hex color for manifest/meta
+- `themeColor` - Hex brand primary color for manifest/meta (must match `--brand` in globals.css)
 - `hero.*` - All hero section content
 - `featureCards` - 3 feature cards with emoji icons
 - `footer.*` - Footer content
@@ -125,13 +125,38 @@ For each new page:
 4. The sitemap auto-includes it (reads from `siteConfig.pages`)
 5. Delete the `src/app/(examples)/` folder (it's just a reference)
 
-### Step 7: Add favicon.svg
+### Step 7: Set Brand Colors in `globals.css`
 
-Create or place a custom `public/favicon.svg` for the tool.
+Open `src/app/globals.css` and update the brand color CSS variables:
 
-### Step 8: Create og-image.png
+```css
+:root {
+  --brand: #10b981;        /* Your brand primary color */
+  --brand-accent: #06b6d4; /* Your brand accent color */
+}
+.dark {
+  --brand: #34d399;        /* Lighter variant for dark mode */
+  --brand-accent: #22d3ee; /* Lighter variant for dark mode */
+}
+```
 
-Create a 1200x630 Open Graph image at `public/og-image.png`.
+Common color pairs:
+- `#10b981` / `#06b6d4` (emerald/cyan)
+- `#3b82f6` / `#6366f1` (blue/indigo)
+- `#a855f7` / `#ec4899` (purple/pink)
+- `#f97316` / `#f59e0b` (orange/amber)
+- `#f43f5e` / `#ef4444` (rose/red)
+
+**Also update** `siteConfig.themeColor` and `siteConfig.brandAccentColor` to match the hex values.
+
+Components use Tailwind classes `text-brand`, `from-brand`, `to-brand-accent`, etc. — these are registered via `@theme inline` and always work (no purging issues).
+
+### Step 8: Add favicon.svg
+
+Create or place a custom `public/favicon.svg` for the tool. Then regenerate PWA icons:
+```bash
+node -e "const s=require('sharp'),f=require('fs');const svg=f.readFileSync('public/favicon.svg');Promise.all([s(svg).resize(192,192).png().toFile('public/icon-192.png'),s(svg).resize(512,512).png().toFile('public/icon-512.png')])"
+```
 
 ### Step 9: Update Environment
 
@@ -160,16 +185,17 @@ All sections use framer-motion staggered animations:
 - `animate={{ opacity: 1, y: 0 }}`
 - `transition={{ delay: 0.1 * index }}`
 
-## Color Scheme
+## Color Scheme (Brand Colors)
 
-Each tool has a unique gradient defined in `siteConfig.headerGradient`. Common choices:
-- `emerald-500` / `cyan-500` (favicon-generator, sitemap-checker)
-- `blue-500` / `indigo-500` (sitemap-url-extractor)
-- `purple-500` / `pink-500` (screenshot-beautifier)
-- `orange-500` / `amber-500`
-- `rose-500` / `red-500`
+Each tool has a unique brand gradient defined as CSS custom properties in `globals.css`:
+- `--brand` / `--brand-accent` in `:root` (light mode)
+- `--brand` / `--brand-accent` in `.dark` (dark mode, usually lighter variants)
 
-**Important**: When using dynamic Tailwind classes from siteConfig, ensure the classes are included in the safelist or use them somewhere statically so Tailwind doesn't purge them.
+These are registered in `@theme inline` as `--color-brand` / `--color-brand-accent`, enabling Tailwind utility classes:
+- `text-brand`, `bg-brand`, `border-brand`, `from-brand`, `shadow-brand/25`
+- `text-brand-accent`, `bg-brand-accent`, `to-brand-accent`, `via-brand-accent`
+
+**NEVER** use dynamic Tailwind class construction like `` `text-${variable}` `` — Tailwind v4 JIT cannot detect these and will purge the CSS. Always use the static `brand` / `brand-accent` classes.
 
 ## Per-Page SEO Pattern (CRITICAL)
 
@@ -323,3 +349,4 @@ Place in `src/app/api/[route]/route.ts`. Add env vars to `src/env.mjs`.
 - Remove Google Analytics integration
 - Skip structured data / JSON-LD
 - Use Tailwind v3 patterns (use v4 @theme inline)
+- Use dynamic Tailwind class construction (`` `text-${variable}` ``) — use `text-brand` / `text-brand-accent` instead

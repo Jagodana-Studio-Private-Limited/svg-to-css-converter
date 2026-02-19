@@ -33,7 +33,7 @@ export function Footer() {
               href={siteConfig.creatorUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={`font-medium text-foreground hover:text-${siteConfig.headerGradient.from} transition-colors`}
+              className="font-medium text-foreground hover:text-brand transition-colors"
             >
               {siteConfig.creator}
             </a>

@@ -1,174 +1,182 @@
 export const siteConfig = {
-  // ====== CUSTOMIZE THESE FOR EACH TOOL ======
-  name: "{{TOOL_NAME}}",
-  title: "{{TOOL_TITLE}}",
-  description: "{{TOOL_DESCRIPTION}}",
-  url: "https://{{TOOL_SLUG}}.jagodana.com",
+  name: "SVG to CSS Converter",
+  title: "SVG to CSS Converter — Inline SVG as background-image, mask, or data URI",
+  description:
+    "Convert SVG markup to CSS background-image data URIs, Base64 or URL-encoded. Get copy-ready CSS for backgrounds, masks, and list-style-image instantly.",
+  url: "https://svg-to-css-converter.tools.jagodana.com",
   ogImage: "/opengraph-image",
 
-  // Header
-  headerIcon: "Wrench", // lucide-react icon name (e.g., Image, Map, Code, Palette, Globe, FileSearch)
-  // Brand gradient colors for Tailwind are in globals.css (--brand / --brand-accent)
-  // Use text-brand, from-brand, to-brand-accent etc. in components
-  brandAccentColor: "#06b6d4", // hex accent for OG image gradient (must match --brand-accent in globals.css)
+  headerIcon: "Code",
+  brandAccentColor: "#6366f1",
 
-  // SEO
   keywords: [
-    "{{KEYWORD_1}}",
-    "{{KEYWORD_2}}",
-    "{{KEYWORD_3}}",
+    "svg to css",
+    "svg data uri",
+    "inline svg css",
+    "svg background image css",
+    "svg to data uri online",
+    "convert svg to css background-image",
+    "svg mask-image css",
+    "svg base64 css",
+    "svg url encode css",
+    "css background svg inline",
   ],
-  applicationCategory: "DeveloperApplication", // or "DesignApplication", "UtilitiesApplication"
+  applicationCategory: "DeveloperApplication",
 
-  // Theme
-  themeColor: "#10b981", // used in manifest and meta tags
+  themeColor: "#3b82f6",
 
-  // Branding
   creator: "Jagodana",
   creatorUrl: "https://jagodana.com",
   twitterHandle: "@jagodana",
 
-  // Social Profiles (for Organization schema sameAs)
   socialProfiles: [
     "https://twitter.com/jagodana",
-    // Add more: LinkedIn, YouTube, etc.
+    "https://github.com/Jagodana-Studio-Private-Limited",
+    "https://www.linkedin.com/company/jagodana",
   ],
 
-  // Links
   links: {
-    github: "https://github.com/Jagodana-Studio-Private-Limited/{{TOOL_SLUG}}",
+    github:
+      "https://github.com/Jagodana-Studio-Private-Limited/svg-to-css-converter",
     website: "https://jagodana.com",
   },
 
-  // Footer
   footer: {
-    about: "{{FOOTER_ABOUT_DESCRIPTION}}",
+    about:
+      "SVG to CSS Converter transforms your SVG markup into ready-to-use CSS data URIs. Eliminate extra HTTP requests by inlining SVGs directly in your stylesheets — no server uploads, 100% client-side.",
     featuresTitle: "Features",
     features: [
-      "{{FEATURE_1}}",
-      "{{FEATURE_2}}",
-      "{{FEATURE_3}}",
-      "{{FEATURE_4}}",
+      "URL-encoded & Base64 output",
+      "background-image, mask-image, list-style-image",
+      "SVG optimization before encoding",
+      "Live preview + size comparison",
     ],
   },
 
-  // Hero Section
   hero: {
-    badge: "{{HERO_BADGE_TEXT}}",
-    titleLine1: "{{HERO_TITLE_LINE_1}}",
-    titleGradient: "{{HERO_TITLE_GRADIENT_TEXT}}",
-    subtitle: "{{HERO_SUBTITLE}}",
+    badge: "100% Client-Side · No Uploads",
+    titleLine1: "Convert SVG to",
+    titleGradient: "CSS Data URIs",
+    subtitle:
+      "Paste your SVG markup and get copy-ready CSS for background-image, mask-image, and list-style-image — URL-encoded or Base64. Optimizes SVG, compares sizes, and shows a live preview.",
   },
 
-  // Feature Cards (shown on homepage)
   featureCards: [
     {
-      icon: "{{FEATURE_ICON_1}}",
-      title: "{{FEATURE_CARD_TITLE_1}}",
-      description: "{{FEATURE_CARD_DESC_1}}",
+      icon: "🔗",
+      title: "Data URI Output",
+      description:
+        "Instantly convert SVG to URL-encoded or Base64 data URIs for use in CSS background-image properties.",
     },
     {
-      icon: "{{FEATURE_ICON_2}}",
-      title: "{{FEATURE_CARD_TITLE_2}}",
-      description: "{{FEATURE_CARD_DESC_2}}",
+      icon: "🎭",
+      title: "Multiple CSS Properties",
+      description:
+        "Get ready-to-copy CSS for background-image, mask-image, and list-style-image with a single paste.",
     },
     {
-      icon: "{{FEATURE_ICON_3}}",
-      title: "{{FEATURE_CARD_TITLE_3}}",
-      description: "{{FEATURE_CARD_DESC_3}}",
+      icon: "⚡",
+      title: "Optimized & Compared",
+      description:
+        "SVG is cleaned up before encoding. See size comparisons between URL-encoded and Base64 to pick the smallest.",
     },
   ],
 
-  // Related Tools (cross-linking to sibling Jagodana tools for internal SEO)
   relatedTools: [
     {
       name: "Favicon Generator",
-      url: "https://favicon-generator.jagodana.com",
+      url: "https://favicon-generator.tools.jagodana.com",
       icon: "🎨",
       description: "Generate all favicon sizes + manifest from any image.",
     },
     {
-      name: "Sitemap Checker",
-      url: "https://sitemap-checker.jagodana.com",
-      icon: "🔍",
-      description: "Discover and validate sitemaps on any website.",
+      name: "Color Palette Explorer",
+      url: "https://color-palette-explorer.tools.jagodana.com",
+      icon: "🎭",
+      description: "Extract color palettes from any image.",
+    },
+    {
+      name: "CSS Gradient Generator",
+      url: "https://css-gradient-generator.tools.jagodana.com",
+      icon: "🌈",
+      description: "Create beautiful CSS gradients visually.",
     },
     {
       name: "Regex Playground",
-      url: "https://regex-playground.jagodana.com",
+      url: "https://regex-playground.tools.jagodana.com",
       icon: "🧪",
       description: "Build, test & debug regular expressions in real-time.",
     },
     {
       name: "Screenshot Beautifier",
-      url: "https://screenshot-beautifier.jagodana.com",
+      url: "https://screenshot-beautifier.tools.jagodana.com",
       icon: "📸",
       description: "Transform screenshots into beautiful images.",
     },
     {
-      name: "Color Palette Explorer",
-      url: "https://color-palette-explorer.jagodana.com",
-      icon: "🎭",
-      description: "Extract color palettes from any image.",
-    },
-    {
       name: "Logo Maker",
-      url: "https://logo-maker.jagodana.com",
+      url: "https://logo-maker.tools.jagodana.com",
       icon: "✏️",
       description: "Create a professional logo in 60 seconds.",
     },
   ],
 
-  // HowTo Steps (drives HowTo JSON-LD schema for rich results)
   howToSteps: [
-    { name: "{{STEP_1_NAME}}", text: "{{STEP_1_TEXT}}", url: "" },
-    { name: "{{STEP_2_NAME}}", text: "{{STEP_2_TEXT}}", url: "" },
-    { name: "{{STEP_3_NAME}}", text: "{{STEP_3_TEXT}}", url: "" },
+    {
+      name: "Paste your SVG",
+      text: "Copy your SVG markup and paste it into the input area. The tool accepts raw SVG code.",
+      url: "",
+    },
+    {
+      name: "Choose encoding",
+      text: "Select URL-encoded or Base64 encoding. The tool shows both with a size comparison so you can pick the smaller one.",
+      url: "",
+    },
+    {
+      name: "Copy the CSS",
+      text: "Click the copy button next to any CSS output — background-image, mask-image, or list-style-image — and paste it directly into your stylesheet.",
+      url: "",
+    },
   ],
-  howToTotalTime: "PT2M", // ISO 8601 duration (e.g., PT2M = 2 minutes)
+  howToTotalTime: "PT1M",
 
-  // FAQ (drives both the FAQ UI section and FAQPage JSON-LD schema)
   faq: [
     {
-      question: "{{FAQ_QUESTION_1}}",
-      answer: "{{FAQ_ANSWER_1}}",
+      question: "Why inline SVG as a CSS data URI?",
+      answer:
+        "Inlining SVGs as data URIs eliminates extra HTTP requests, prevents flash of unstyled content (FOUC) on icons, and keeps your assets self-contained in the stylesheet. It's especially useful for small icons and UI elements.",
     },
     {
-      question: "{{FAQ_QUESTION_2}}",
-      answer: "{{FAQ_ANSWER_2}}",
+      question: "Should I use URL-encoded or Base64?",
+      answer:
+        "URL-encoded is usually smaller for SVG because SVG is text-based. Base64 adds ~33% overhead. This tool shows both sizes so you can compare and pick the best option for your case.",
     },
     {
-      question: "{{FAQ_QUESTION_3}}",
-      answer: "{{FAQ_ANSWER_3}}",
+      question: "Is my SVG data sent to a server?",
+      answer:
+        "No. Everything happens in your browser. Your SVG never leaves your machine — there are no server uploads or API calls.",
     },
     {
-      question: "{{FAQ_QUESTION_4}}",
-      answer: "{{FAQ_ANSWER_4}}",
+      question: "What SVG optimization does the tool do?",
+      answer:
+        "The tool removes unnecessary whitespace, XML declarations, comments, and redundant attributes before encoding. This produces smaller data URIs without changing how the SVG renders.",
+    },
+    {
+      question: "Can I use data URI SVGs in all browsers?",
+      answer:
+        "Yes. CSS data URIs with SVG are supported in all modern browsers including Chrome, Firefox, Safari, and Edge. They've been widely supported since IE9.",
     },
   ],
 
-  // ====== PAGES (for sitemap + per-page SEO) ======
-  // Add every route here. Sitemap and generatePageMetadata() read from this.
   pages: {
     "/": {
-      title: "{{TOOL_TITLE}}",
-      description: "{{TOOL_DESCRIPTION}}",
+      title:
+        "SVG to CSS Converter — Inline SVG as background-image, mask, or data URI",
+      description:
+        "Convert SVG markup to CSS background-image data URIs, Base64 or URL-encoded. Get copy-ready CSS for backgrounds, masks, and list-style-image instantly.",
       changeFrequency: "weekly" as const,
       priority: 1,
     },
-    // Example page (DELETE when starting your tool, or customize)
-    "/about": {
-      title: "About - {{TOOL_NAME}}",
-      description: "Learn more about {{TOOL_NAME}} and how it works.",
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    // "/blog": {
-    //   title: "Blog - {{TOOL_NAME}}",
-    //   description: "Tips, tutorials, and updates about {{TOOL_NAME}}.",
-    //   changeFrequency: "weekly" as const,
-    //   priority: 0.8,
-    // },
   },
 } as const;
 
